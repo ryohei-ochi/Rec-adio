@@ -74,6 +74,7 @@ class hibiki:
                     timestamp= update_date.strftime("%Y%m%d"),
                     station= "hibiki",
                     uri= url,
+                    path= file_path
                 )
                 if (f.Swift.hadInit):
                     cmd = 'rm "%s"' % (file_path)

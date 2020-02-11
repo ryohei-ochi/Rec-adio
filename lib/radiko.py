@@ -145,6 +145,7 @@ def rec(data):
             timestamp= program_data["ft"],
             station= program_data["station"],
             uri= url,
+            path= file_path,
             info= program_data["info"]
         )
         if (f.Swift.hadInit):

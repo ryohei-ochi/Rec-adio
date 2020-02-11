@@ -101,4 +101,42 @@ CREATE TABLE `Programs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8;
 ```
+---
+## このforkでやったこと
+- Radikoはまだ録音できていない
+- 本家のWEB Clientは未確認
+- swiftの設定を削除
+- MySQLのテーブル定義を変更
+```
+ALTER TABLE Programs ADD (
+  `path` text,
+  `count` int unsigned NOT NULL 
+);
+ALTER TABLE `Programs` ALTER `count` SET DEFAULT 0;
+```
+- 録音が成功したときにファイルのローカルパスを保存
+- 雑なWebUIで再生回数を記録できるようなPHP
+- ↑そこPython使えよ()
+- ↑tablesorterで手抜き、まだ調整が必要
+- `index.php`の`SAVEROOT`を書き換えてね
+- すごく雑なので`savefile`をそのままApache2.4で公開
+```
+Listen 417
+
+<VirtualHost _default_:417>
+	DocumentRoot /home/rochi/Rec-adio/public_html
+	Alias /savefile /home/rochi/Rec-adio/savefile
+	
+	<Directory "/home/rochi/Rec-adio/public_html">
+		AllowOverride All
+		Require all granted
+	</Directory>
+	<Directory "/home/rochi/Rec-adio/savefile">
+		Options Indexes
+		AllowOverride All
+		Require all granted
+	</Directory>
+</VirtualHost>
+```
+- ポート番号は好きに変更して欲しいな←椎菜←417
 

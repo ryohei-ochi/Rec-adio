@@ -214,13 +214,13 @@ class DBController:
         except:
             print("Mysql login failed")
     
-    def insert(self, title, pfm, timestamp, station, uri, info = ""):
+    def insert(self, title, pfm, timestamp, station, uri, info = "", path = "", count = 0):
         if (not self.hadInit):
             return
         self.conn.ping(reconnect=True)
         cur = self.conn.cursor()
-        s = "INSERT INTO Programs (`title`, `pfm`, `rec-timestamp`, `station`, `uri`, `info`) VALUES ( %s, %s, %s, %s, %s, %s)"
-        cur.execute(s, (title, pfm, timestamp, station, uri, info))
+        s = "INSERT INTO Programs (`title`, `pfm`, `rec-timestamp`, `station`, `uri`, `info`, `path`, `count`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s)"
+        cur.execute(s, (title, pfm, timestamp, station, uri, info, path, count))
         self.conn.commit()
         cur.close()
     

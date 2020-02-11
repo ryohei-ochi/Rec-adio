@@ -93,7 +93,8 @@ class agqr:
                 pfm= program_data["pfm"],
                 timestamp= program_data["ft"] + "00",
                 station= "AGQR",
-                uri= url
+                uri= url,
+                path= file_path+".m4a"
             )
             if (f.Swift.hadInit):
                 cmd = 'rm "%s"' % (file_path + ".m4a")

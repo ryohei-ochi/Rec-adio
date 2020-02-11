@@ -69,7 +69,8 @@ class onsen:
                         pfm= personality,
                         timestamp= update_DT,
                         station= "onsen",
-                        uri= url
+                        uri= url,
+                        path= file_path
                     )
                     if (f.Swift.hadInit):
                         cmd = 'rm "%s"' % (file_path)
