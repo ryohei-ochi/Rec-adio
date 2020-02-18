@@ -10,7 +10,7 @@ import os
 
 
 class agqr:
-    AGQR_URL = "https://agqr.sun-yryr.com/api/today"
+    AGQR_URL = "https://agqr.sun-yryr.com/api/today?isRepeat=True"
     def __init__(self):
         res = requests.get(self.AGQR_URL)
         res.encoding = "utf-8"
