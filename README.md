@@ -102,8 +102,10 @@ CREATE TABLE `Programs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8;
 ```
 ---
-## このforkでやったこと
-- Radikoはまだ録音できていない
+# このforkでやったこと
+- ~~Radikoはまだ録音できていない~~
+- ↑できた！
+- ↑多分日本国内のサーバーからじゃないとアクセスできないのかも？
 - 本家のWEB Clientは未確認
 - swiftの設定を削除
 - MySQLのテーブル定義を変更
@@ -117,7 +119,7 @@ ALTER TABLE `Programs` ALTER `count` SET DEFAULT 0;
 - 録音が成功したときにファイルのローカルパスを保存
 - 雑なWebUIで再生回数を記録できるようなPHP
 - ↑そこPython使えよ()
-- ↑tablesorterで手抜き、まだ調整が必要
+- ↑tablesorterで手抜き、グルーピングとフィルタを簡易実装
 - `index.php`の`SAVEROOT`を書き換えてね
 - すごく雑なので`savefile`をそのままApache2.4で公開
 ```
